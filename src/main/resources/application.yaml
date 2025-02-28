@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: backoffice
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}/${DB_NAME:backoffice}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: ${FLYWAY_ENABLED:true}
+    validate-migration-naming: true
+  threads:
+    virtual:
+      enabled: false
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: on
