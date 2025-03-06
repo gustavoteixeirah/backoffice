@@ -25,7 +25,7 @@ Follow this sequence for incremental development:
 ### Phase 2: Core Domain
 4. [ ] Define Protobuf service contracts (`*.proto` files)
 5. [ ] Implement base entities and domain models
-6. [ ] Create repository interfaces (Ports)
+6. [ ] Create repository interfaces (Ports) (Also implement read/write databases)
 
 ### Phase 3: Business Logic
 7. [ ] Implement use cases with domain services
