@@ -1,4 +1,4 @@
-package dev.gustavoteixeira.backoffice;
+package dev.gustavoteixeirah.backoffice;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

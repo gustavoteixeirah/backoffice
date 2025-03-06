@@ -1,4 +1,4 @@
-package dev.gustavoteixeira.backoffice;
+package dev.gustavoteixeirah.backoffice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

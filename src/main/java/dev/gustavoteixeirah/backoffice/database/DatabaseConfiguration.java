@@ -1,4 +1,4 @@
-package dev.gustavoteixeira.backoffice.infrastructure.database;
+package dev.gustavoteixeirah.backoffice.database;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
