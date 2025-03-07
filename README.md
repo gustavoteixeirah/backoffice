@@ -1,5 +1,8 @@
 # Backoffice gRPC API
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/gustavoteixeirah/backoffice?labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit%20Reviews)
+
+
 A modern gRPC-based backend service demonstrating clean architecture, scalability, and senior-level engineering practices.  
 Built with Spring Boot 3, Java 21, PostgreSQL, and gRPC.
 
