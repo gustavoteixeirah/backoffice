@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+package dev.gustavoteixeirah.backoffice;
+
+enum EventEntityTarget {
+  UNKNOWN_EVENT = 0;
+  USER = 1;
+}
+
+enum EventActionType {
+  UNKNOWN_ACTION = 0;
+  CREATED = 1;
+  UPDATED = 2;
+  DELETED = 3;
+}
+
+message EventProto {
+  string event_id = 1;              // ID único do evento
+  EventActionType action_type = 2;         // Tipo do evento
+  string initial_event_payload = 3; // Payload do evento em formato JSON
+  string end_event_payload = 4;     // Payload do evento em formato JSON
+  map<string, string> metadata = 7; // Metadados adicionais (opcional)
+  EventEntityTarget target_entity = 8;  // Entidade principal relacionada ao evento
+  int64 target_id = 14;  // ID da entidade principal relacionada ao evento
+  google.protobuf.Timestamp at = 15; // momento em que o evento ocorreu
+
+  // Dados de auditoria
+  string user_id = 11;               // ID do usuário que gerou o evento
+  string user_name = 12;             // Nome do usuário que gerou o evento
+  string user_email = 13;           // Email do usuário que gerou o evento
+}
+
+message ListEventsRequest {
+  int32 page_number = 1;
+  int32 page_size = 2;
+  EventEntityTarget target_entity = 3;
+  int64 target_id = 4;
+  google.protobuf.Timestamp dateFrom = 5;
+  google.protobuf.Timestamp dateTo = 6;
+  string user_id = 7;
+  EventActionType action_type = 8;
+
+  message Response {
+    repeated EventProto events = 1;
+    int32 total_elements = 2;
+  }
+}
+service EventsService {
+  rpc ListEvents(ListEventsRequest) returns (ListEventsRequest.Response);
+}
